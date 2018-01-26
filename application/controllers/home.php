@@ -9,8 +9,12 @@ class Home extends CI_Controller {
 		$this->load->model("m_members");
 	}
 
-
 	public function index()
+	{
+		$this->load->view('home');
+	}
+
+	public function register()
 	{
 		$data['sql1'] = $this->m_members->getmembers();
 		$this->load->view('header');
