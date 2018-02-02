@@ -14,7 +14,7 @@
     <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <center> <h1 class="page-heading">Login Area</h1> </center>
+              <center> <h1 class="page-heading">Login Here</h1> </center>
     </div>
 <div class="container"  style="margin-top:100px;">
       <div class="row">
@@ -22,36 +22,24 @@
         <div class="col-md-4">
           <div class="panel panel-default">
             <div class="panel-body">
-<?php echo form_open("login/login_process"); ?>
 	
-<!--     <?php echo $error; ?>
- -->	<div class="form-group">
-        <?php
-        echo form_label('Username','username');
-        echo form_input('username','','class="form-control" id="username" placeholder="Username" required')
-        ?>
-        </div>
-        <div class="form-group">
-        <?php
-        echo form_label('Password','password');
-        echo form_password('password','','class="form-control" id="password" placeholder="Password" required')
-        ?>
-        </div>
-       	 <button type="submit" class="btn btn-primary">Login</button>
-       	<a href="<?php echo site_url('login/register') ?>" class="btn btn-link">Register</a>
-        <?php echo form_close() ?>
-	<?php echo form_close(); ?>
-	</div>
-          </div>
-        </div>
-        <div class="col-md-4"></div>
-      </div>
+
+    <form action="<?php echo base_url('login/cek_login'); ?>" method="post">
+    <div class="form-group">
+        <label> Username :</label>
+            <input type="text" class="form-control" name="username" required="true">
+    </div>
+    <div class="form-group">
+        <label>Password :</label>
+        <input type="password" class="form-control" name="password" required="true">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+    </div>
+    <div class="col-md-4"></div>
+    </div>
 
     </div>
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="<?php echo base_url('assets/login/assets/bstrp/js/jquery.min.js') ?>"></script>
-    <script src="<?php echo base_url('assets/login/assets/bstrp/js/jquery.js') ?>"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="<?php echo base_url('assets/login/assets/bstrp/js/bootstrap.min.js') ?>"></script>
 </body>
 </html>

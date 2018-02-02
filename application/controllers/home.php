@@ -11,11 +11,6 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('home');
-	}
-
-	public function register()
-	{
 		$data['sql1'] = $this->m_members->getmembers();
 		$this->load->view('header');
 		$this->load->view('members',$data);
@@ -50,7 +45,7 @@ class Home extends CI_Controller {
 			$this->m_members->update($id,$data);
 		}
 
-		redirect('home');
+		redirect('welcome');
 
 	}
 	public function delete($id){

@@ -24,8 +24,7 @@ class Login extends CI_Controller
 		$password = $this->input->post('password');
 		$where = array(
 			'username' => $username,
-			'password' => md5($password)
-			);
+			'password' => $password			);
 		$cek = $this->m_crud->cek_login('usertabs', $where)->num_rows();
 		if($cek > 0){
 			$data_session = array(
@@ -46,7 +45,7 @@ class Login extends CI_Controller
 
 	function logout()
 	{
-		$this->session->session_destroy();
+		$this->session->sess_destroy();
 		redirect(base_url('login'));
 	}
 }

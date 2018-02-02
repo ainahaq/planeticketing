@@ -45,18 +45,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<span class="icon-bar"></span>
 					</button>
 					<div class="w3_navigation_pos">
-						<h1><a href="index.html"><span>W</span>anderlicious</a></h1>
+						<h1><a href="home.php"><span>W</span>anderlicious</a></h1>
 					</div>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
 					<nav class="cl-effect-4" id="cl-effect-4">
 						<ul class="nav navbar-nav menu__list">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="#about" class=" scroll">About</a></li>
-							<li><a href="#contact" class=" scroll">Contact</a></li>
+							<li><a href="index.php">Home</a></li>
+							<li><a href="#about">About</a></li>
+							<li><a href="#contact">Contact</a></li>
 							<li><a href="<?php base_url();?>index.php/home/add">Register</a></li>
-							<li><a href="<?php base_url();?>index.php/login">Login</a></li>
+							<li><a href="<?php base_url();?>login">Login</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -129,7 +129,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div class="col-md-4 bann-right-wthree">
 					<i class="fa fa-envelope-o" aria-hidden="true"></i>
-					<a href="mailto:info@example.com">info@wanderlicious.com</a>
+					<a href="mailto:info@wanderlicious.com">info@wanderlicious.com</a>
 				</div>
 			</div>
 		</div>
@@ -185,8 +185,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<h6><a href="index.html"><span>W</span>anderlicious</a></h6>
 		<div class="footer-contact-w3ls">
 			<ul>
-				<li><i class="fa fa-globe" aria-hidden="true"></i>55, 8134 Adliswil, Switzerland</li>
-				<li><i class="fa fa-phone" aria-hidden="true"></i>012 345 6789</li>
+				<li><i class="fa fa-globe" aria-hidden="true"></i>Jl. DI. Panjaitan No. 128 Purwokerto Selatan</li>
+				<li><i class="fa fa-phone" aria-hidden="true"></i>0813 1470 9800</li>
 				<li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:info@example.com">info@wanderlicious.com</a></li>
 			</ul>
 		</div>

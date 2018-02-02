@@ -213,7 +213,7 @@ desired effect
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="<?php echo base_url() ?>login/logout" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -284,7 +284,7 @@ desired effect
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        User Data
+        Page Header
         <small>Optional description</small>
       </h1>
       <ol class="breadcrumb">
@@ -296,41 +296,58 @@ desired effect
     <!-- Main content -->
     <section class="content container-fluid">
     <div class="content">
-    <a href="<?php echo base_url(); ?>index.php/admin/adduser" class="btn btn-primary">Add</a>
-<table class="table" id="manageMemberTable">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Username</th>
-      <th>Password</th>
-      <th>Full Name</th>
-      <th>Level</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-    <?php
-    $no=0;
-    foreach ($sql1->result() as $obj1) {
-      $no++;
-      ?>
-
-        <tr>
-          <td><?php echo $no; ?></td>
-          <td><?php echo $obj1->username; ?></td>
-          <td><?php echo $obj1->password; ?></td>
-          <td><?php echo $obj1->fullname; ?></td>
-          <td><?php echo $obj1->level; ?></td>
-          <td>
-                    <a href="<?php echo base_url(); ?>index.php/admin/edit/<?php echo $obj1->id; ?>" class="btn btn-info btn-xs">Edit</a> 
-                    <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-                    <a href="javascript:if(confirm('Are you sure want to delete this?')){document.location='<?php echo base_url();?>index.php/home/delete/<?php echo $obj1->id ?>';}" class="btn btn-danger btn-xs">Delete</a>
-                    <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-                </td>
-        </tr>
-      <?php 
+    
+<?php 
+  $id="";
+  $username="";
+  $password="";
+  $fullname="";
+  $level="";
+    if($op=="edit"){
+      foreach ($sql->result() as $obj) {
+        $op = "edit";
+        $id = $obj->id;
+        $username = $obj->username;
+        $password = $obj->password;
+        $fullname = $obj->fullname;
+        $level = $obj->level;
     }
-    ?>
-</table>
+}
+
+?>
+<form role="form" action="<?php echo base_url(); ?>index.php/admin/save" method="POST">
+  <input type="hidden" name="op" value="<?php echo $op; ?>" class="form-control">
+  <input type="hidden" class="form-control" name="id" value="<?php echo $id; ?>">
+  <div class="form-group">
+    <label for="inputName3" class="col-sm-2 control-label">Username</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="username" value="<?php echo $username; ?>" placeholder="Username">
+    </div>
+  </div>
+ <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="password" value="<?php echo $password; ?>" placeholder="Password">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputName3" class="col-sm-2 control-label">Full Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="fullname" value="<?php echo $fullname; ?>" placeholder="Full Name">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputLevel3" class="col-sm-2 control-label">Level</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="level" value="<?php echo $level; ?>" placeholder="Level">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">Save</button>
+    </div>
+  </div>
+</form>
   </div>
     </section>
     <!-- /.content -->
