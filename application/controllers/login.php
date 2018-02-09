@@ -12,6 +12,7 @@ class Login extends CI_Controller
 	}
 	
 	function index(){
+		$this->cek_sessiontrue();
 		$status = $this->session->userdata("status");
 		if($status == "login"){
 			redirect(base_url('admin'));
@@ -20,33 +21,56 @@ class Login extends CI_Controller
 	}
 
 	function cek_login(){
-		$username = $this->input->post('username');
-		$password = $this->input->post('password');
-		$where = array(
-			'username' => $username,
-			'password' => $password			);
-		$cek = $this->m_crud->cek_login('usertabs', $where)->num_rows();
-		if($cek > 0){
-			$data_session = array(
-				'nama' => $username,
-				'status' => "login"
-				);
-			$this->session->set_userdata($data_session);
-			redirect(base_url('admin'));
-		}else{
-			echo "<script type='text/javascript'
-			alert ('Maaf username dan password Anda salah!');
-			document.write ('<center><h1> Harap masukan username dan password dengan benar </h1></center>');
-			</script>";
-			redirect(base_url("login"));
-		}
+		$data = array(
+			'username' => $this->input->post('username', TRUE),
+			'password' => $this->input->post('password', TRUE),
+			);
 
+		$hasil = $this->m_crud->GetData($data);
+		if ($hasil->num_rows() == 1) {
+			foreach ($hasil->result() as $sess) {
+				$sess_data['id'] = $sess->id;
+				$sess_data['username'] = $sess->username;
+				$sess_data['fullname'] = $sess->fullname;
+				$sess_data['level'] = $sess->level;
+				$sess_data['status'] = 'login';
+			}
+			$this->session->set_userdata($sess_data);
+				redirect(base_url().'admin');
+		}
+		else {
+			$info='<div style="color:red">PERIKSA KEMBALI USERNAME DAN PASSWORD ANDA!</div>';
+			$this->session->set_userdata('info',$info);
+
+			redirect(base_url().'login');
+
+		}
 	}
 
 	function logout()
 	{
 		$this->session->sess_destroy();
-		redirect(base_url('login'));
+		redirect(base_url('welcome'));
 	}
+	public function cek_sessiontrue(){
+    	$sesion = $this->session->status;
+    	if(!empty($sesion)){ 
+    	  	redirect(base_url().'admin');
+    	}
+    }
+    public function cek_session(){
+    	$sesion = $this->session->status;
+    	if(empty($sesion)){ 
+    	  	return 0;
+    	}else{
+    		return 1;
+    	}
+  	}
+    public function cek_sessionfalse(){
+    	$sesion = $this->session->status;
+    	if(empty($sesion)){ 
+      		redirect(base_url().'login');
+         }
+     }
 }
 

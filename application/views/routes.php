@@ -64,7 +64,7 @@ desired effect
     <!-- Logo -->
     <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>Db</span>
+      <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>Admin</b>Dashboard</span>
     </a>
@@ -261,8 +261,8 @@ desired effect
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">Dashboard</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#"><i class="fa fa-home"></i> <span>User</span></a></li>
-        <li><a href="<?php echo base_url(); ?>admin/routes"><i class="fa fa-road"></i> <span>Routes</span></a></li>
+        <li><a href="<?php echo base_url(); ?>admin"><i class="fa fa-home"></i> <span>User</span></a></li>
+        <li class="active"><a href="<?php echo base_url(); ?>admin/routes"><i class="fa fa-road"></i> <span>Routes</span></a></li>
         <li><a href="<?php echo base_url(); ?>admin/plane"><i class="fa fa-plane"></i> <span>Planes</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-"></i> <span>Multilevel</span>
@@ -286,7 +286,7 @@ desired effect
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        User Data
+        Routes Data
         <small>Optional description</small>
       </h1>
       <ol class="breadcrumb">
@@ -297,17 +297,18 @@ desired effect
 
     <!-- Main content -->
     <section class="content container-fluid">
-    <div class="box box-info">
+        <div class="box box-info">
     <div class="content">
-    <a href="<?php echo base_url(); ?>index.php/admin/adduser" class="btn btn-primary">Add</a>
+    <a href="<?php echo base_url(); ?>index.php/admin/addroutes" class="btn btn-primary">Add</a>
 <table id="example1" class="table table-bordered table-striped">
   <thead>
     <tr>
       <th>ID</th>
-      <th>Username</th>
-      <th>Password</th>
-      <th>Full Name</th>
-      <th>Level</th>
+      <th>Depart At</th>
+      <th>Routes From</th>
+      <th>Routes To</th>
+      <th>Airplane Type</th>
+      <th>Price</th>
       <th>Action</th>
     </tr>
   </thead>
@@ -319,14 +320,15 @@ desired effect
 
         <tr>
           <td><?php echo $no; ?></td>
-          <td><?php echo $obj1->username; ?></td>
-          <td><?php echo $obj1->password; ?></td>
-          <td><?php echo $obj1->fullname; ?></td>
-          <td><?php echo $obj1->level; ?></td>
+          <td><?php echo $obj1->depart_at; ?></td>
+          <td><?php echo $obj1->routes_from; ?></td>
+          <td><?php echo $obj1->routes_to; ?></td>
+          <td><?php echo $obj1->plane_name; ?></td>
+          <td><?php echo $obj1->price; ?></td>
           <td>
-                    <a href="<?php echo base_url(); ?>index.php/admin/edit/<?php echo $obj1->id; ?>" class="btn btn-info btn-xs">Edit</a> 
+                    <a href="<?php echo base_url(); ?>index.php/admin/editroutes/<?php echo $obj1->id; ?>" class="btn btn-info btn-xs">Edit</a> 
                     <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-                    <a href="javascript:if(confirm('Are you sure want to delete this?')){document.location='<?php echo base_url();?>index.php/admin/delete/<?php echo $obj1->id ?>';}" class="btn btn-danger btn-xs">Delete</a>
+                    <a href="javascript:if(confirm('Are you sure want to delete this?')){document.location='<?php echo base_url();?>index.php/admin/deleteroutes/<?php echo $obj1->id ?>';}" class="btn btn-danger btn-xs">Delete</a>
                     <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
                 </td>
         </tr>

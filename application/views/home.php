@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Wanderlicious Travel Agency</title>
+<title>Wanderlicious</title>
 <!-- meta-tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -45,7 +45,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<span class="icon-bar"></span>
 					</button>
 					<div class="w3_navigation_pos">
-						<h1><a href="home.php"><span>W</span>anderlicious</a></h1>
+						<h1><a href="index.php"><span>W</span>anderlicious</a></h1>
 					</div>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
@@ -54,7 +54,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<ul class="nav navbar-nav menu__list">
 							<li><a href="index.php">Home</a></li>
 							<li><a href="#about">About</a></li>
-							<li><a href="#contact">Contact</a></li>
 							<li><a href="<?php base_url();?>index.php/home/add">Register</a></li>
 							<li><a href="<?php base_url();?>login">Login</a></li>
 						</ul>
@@ -71,10 +70,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<h2>Hundreds of Destinations Worldwide</h2>
 			<div class="book-form" id="register">
 			<p>Pick your destination</p>
-			   <form action="#" method="post">
+			   <form action="<?php base_url(); ?>welcome/search" method="post">
 					<div class="col-md-3 form-time-w3layouts">
 							<label>Travelling From</label>
-							<select class="form-control">
+							<select class="form-control" name="routes_from">
 								<option>Jakarta</option>
 								<option>Batam</option>
 								<option>Banda Aceh</option>
@@ -93,7 +92,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 					<div class="col-md-3 form-left-agileits-w3layouts ">
 							<label>Travelling To</label>
-							<select class="form-control">
+							<select class="form-control" name="routes_to">
 								<option>Denpasar</option>
 								<option>Jakarta</option>
 								<option>Batam</option>
@@ -169,9 +168,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="clearfix"> </div>	
 </div>
 </div>
-<div class="map-w3-agile">
-	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1401095.1797624144!2d7.051648809385445!3d46.695591802572785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479aa7f454717f6d%3A0x452444bf73cbc87a!2sBest+of+Switzerland+Tours+AG!5e0!3m2!1sen!2sin!4v1494325075835"></iframe>
-</div>
 	<div class="col-md-4 subscribe-grid">
 		<h5>Subscribe for our latest updates</h5>
 		<p>Get <span>10%</span> off on booking</p>
@@ -182,7 +178,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 <div class="col-md-8 footer-w3layouts">
 		<div class="footer-top-agile">
-		<h6><a href="index.html"><span>W</span>anderlicious</a></h6>
+		<h6><a href="index.php"><span>W</span>anderlicious</a></h6>
 		<div class="footer-contact-w3ls">
 			<ul>
 				<li><i class="fa fa-globe" aria-hidden="true"></i>Jl. DI. Panjaitan No. 128 Purwokerto Selatan</li>
@@ -202,7 +198,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="footer-bottom-wthree">
 			<div class="copyright-wthree">
 				<p>&copy; 2018 Wanderlicious . All Rights Reserved</p>
-				<a href="#home" class="scroll bt-icon"><i class="fa fa-upload" aria-hidden="true"></i></a>
+				<a href="index.php" class="scroll bt-icon"><i class="fa fa-upload" aria-hidden="true"></i></a>
 			</div>
 			<div class="clearfix"></div>
 		</div>

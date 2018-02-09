@@ -261,9 +261,9 @@ desired effect
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">Dashboard</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#"><i class="fa fa-home"></i> <span>User</span></a></li>
+        <li><a href="<?php echo base_url(); ?>admin"><i class="fa fa-home"></i> <span>User</span></a></li>
         <li><a href="<?php echo base_url(); ?>admin/routes"><i class="fa fa-road"></i> <span>Routes</span></a></li>
-        <li><a href="<?php echo base_url(); ?>admin/plane"><i class="fa fa-plane"></i> <span>Planes</span></a></li>
+        <li class="active"><a href="<?php echo base_url(); ?>admin/plane"><i class="fa fa-plane"></i> <span>Planes</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-"></i> <span>Multilevel</span>
             <span class="pull-right-container">
@@ -286,7 +286,7 @@ desired effect
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        User Data
+        Planes Data
         <small>Optional description</small>
       </h1>
       <ol class="breadcrumb">
@@ -297,17 +297,17 @@ desired effect
 
     <!-- Main content -->
     <section class="content container-fluid">
-    <div class="box box-info">
+        <div class="box box-info">
     <div class="content">
-    <a href="<?php echo base_url(); ?>index.php/admin/adduser" class="btn btn-primary">Add</a>
+    <a href="<?php echo base_url(); ?>index.php/admin/addplane" class="btn btn-primary">Add</a>
 <table id="example1" class="table table-bordered table-striped">
   <thead>
     <tr>
       <th>ID</th>
-      <th>Username</th>
-      <th>Password</th>
-      <th>Full Name</th>
-      <th>Level</th>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Seat Quantity</th>
       <th>Action</th>
     </tr>
   </thead>
@@ -319,14 +319,14 @@ desired effect
 
         <tr>
           <td><?php echo $no; ?></td>
-          <td><?php echo $obj1->username; ?></td>
-          <td><?php echo $obj1->password; ?></td>
-          <td><?php echo $obj1->fullname; ?></td>
-          <td><?php echo $obj1->level; ?></td>
+          <td><?php echo $obj1->code; ?></td>
+          <td><?php echo $obj1->name; ?></td>
+          <td><?php echo $obj1->description; ?></td>
+          <td><?php echo $obj1->seat_qty; ?></td>
           <td>
-                    <a href="<?php echo base_url(); ?>index.php/admin/edit/<?php echo $obj1->id; ?>" class="btn btn-info btn-xs">Edit</a> 
+                    <a href="<?php echo base_url(); ?>index.php/admin/editplane/<?php echo $obj1->id; ?>" class="btn btn-info btn-xs">Edit</a> 
                     <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-                    <a href="javascript:if(confirm('Are you sure want to delete this?')){document.location='<?php echo base_url();?>index.php/admin/delete/<?php echo $obj1->id ?>';}" class="btn btn-danger btn-xs">Delete</a>
+                    <a href="javascript:if(confirm('Are you sure want to delete this?')){document.location='<?php echo base_url();?>index.php/admin/deleteplane/<?php echo $obj1->id ?>';}" class="btn btn-danger btn-xs">Delete</a>
                     <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
                 </td>
         </tr>
