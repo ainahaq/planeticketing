@@ -51,13 +51,14 @@ public function __construct(){
     public function search()
 	{
 		$this->cek_sessiontrue();
-		$routes_from = $this->input->post('routes_from');
-		$routes_to = $this->input->post('routes_to');
+		$routes_from = $this->input->get('routes_from');
+		$routes_to = $this->input->get('routes_to');
 		$data = array(
-			'data_routes' => $this->m_members->get_routes("where routes_from LIKE '%$routes_from%' AND routes_to LIKE '%$routes_to%'")->result_array()
+			'data_routes' => $this->m_members->getrute("where routes_from LIKE '%$routes_from%' AND routes_to LIKE '%$routes_to%'")->result_array()
 		);
 		$this->load->view('search' , $data);
 	}
+
 	public function cust()
 	{
 		$this->cek_sessiontrue();

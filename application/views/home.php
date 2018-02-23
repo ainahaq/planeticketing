@@ -11,7 +11,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- meta-tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="WanderliciousTravel Agency" />
+<meta name="keywords" content="Wanderlicious" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //meta-tags -->
@@ -70,7 +70,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<h2>Hundreds of Destinations Worldwide</h2>
 			<div class="book-form" id="register">
 			<p>Pick your destination</p>
-			   <form action="<?php base_url(); ?>welcome/search" method="post">
+			   <form action="<?php base_url(); ?>welcome/search" method="get">
 					<div class="col-md-3 form-time-w3layouts">
 							<label>Travelling From</label>
 							<select class="form-control" name="routes_from">
@@ -183,7 +183,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<ul>
 				<li><i class="fa fa-globe" aria-hidden="true"></i>Jl. DI. Panjaitan No. 128 Purwokerto Selatan</li>
 				<li><i class="fa fa-phone" aria-hidden="true"></i>0813 1470 9800</li>
-				<li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:info@example.com">info@wanderlicious.com</a></li>
+				<li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:info@wanderlicious.com">info@wanderlicious.com</a></li>
 			</ul>
 		</div>
 		<div class="clearfix"> </div>

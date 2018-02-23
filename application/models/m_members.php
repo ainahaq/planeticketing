@@ -10,12 +10,21 @@ class m_members extends CI_Model {
 		return $sql;
 
 	}	
-	public function getroutes()
-	{
-		
-		$sql = $this->db->query("SELECT * FROM routes");
-		return $sql;
-
+	public function getroutes($where=" "){
+		$data =$this->db->query('select * from routes ' .$where);
+		return $data;
+	}
+	public function getrute($where=" "){
+		$data =$this->db->query('select * from routes ' .$where);
+		return $data;
+	}
+	public function getcust($where=" "){
+		$data =$this->db->query('select * from cust ' .$where);
+		return $data;
+	}
+	public function getroutestrans($where=" "){
+		$data =$this->db->query('select * from routes, transportation ' .$where);
+		return $data;
 	}
 	public function getplane()
 	{
@@ -26,6 +35,10 @@ class m_members extends CI_Model {
 	}
 	function save($data){
 		$this->db->insert('usertabs',$data);
+
+	}
+	function savecust($data){
+		$this->db->insert('cust',$data);
 
 	}
 
@@ -84,7 +97,7 @@ class m_members extends CI_Model {
 		$this->db->update('transportation',$data);
 	}
 	function get_routes($where=" "){
-		$data =$this->db->query('select * from routes ' .$where);
+		$data =$this->db->query('select * from routes, transportation ' .$where);
 		return $data;
 	}
 }

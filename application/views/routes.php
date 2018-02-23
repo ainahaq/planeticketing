@@ -305,6 +305,8 @@ desired effect
     <tr>
       <th>ID</th>
       <th>Depart At</th>
+      <th>Landing At</th>
+      <th>Depart Date</th>
       <th>Routes From</th>
       <th>Routes To</th>
       <th>Airplane Type</th>
@@ -321,9 +323,11 @@ desired effect
         <tr>
           <td><?php echo $no; ?></td>
           <td><?php echo $obj1->depart_at; ?></td>
+          <td><?php echo $obj1->landing_at; ?></td>
+          <td><?php echo $obj1->depart_date; ?></td>
           <td><?php echo $obj1->routes_from; ?></td>
           <td><?php echo $obj1->routes_to; ?></td>
-          <td><?php echo $obj1->plane_name; ?></td>
+          <td><?php echo $obj1->id_transport; ?></td>
           <td><?php echo $obj1->price; ?></td>
           <td>
                     <a href="<?php echo base_url(); ?>index.php/admin/editroutes/<?php echo $obj1->id; ?>" class="btn btn-info btn-xs">Edit</a> 

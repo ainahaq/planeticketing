@@ -57,8 +57,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
 					<nav class="cl-effect-4" id="cl-effect-4">
 						<ul class="nav navbar-nav menu__list">
-							<li class="active"><a>Choose a Flight </a></li>
-							<li><a href="">Personal Information</a></li>
+							<li><a>Choose a Flight </a></li>
+							<li class="active"><a>Personal Information</a></li>
 							<li><a>Payment Type</a></li>
 						</ul>
 					</nav>
@@ -78,45 +78,42 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- about -->
 <!-- banner-bottom -->	
 <div class="contact" id="contact">
-	<div class="container">
-		<table class="table table-bordered table-striped" id="manageMemberTable">
-  			<thead>
-    			<tr>
-      				<th>ID</th>
-				    <th>Depart At</th>
-				    <th>Landing At</th>
-				    <th>Depart Date</th>
-				    <th>Routes From</th>
-				    <th>Routes To</th>
-				    <th>Airplane Type</th>
-				    <th>Price</th>
-				    <th>Action</th>
-				</tr>
-  			</thead>
-    		<?php
-    			$no=0;
-    			foreach ($data_routes as $obj1) {
-      			$no++;
-      		?>
-
-        		<tr>
-          			<td><?php echo $no; ?></td>
-			        <td><?php echo $obj1['depart_at']; ?></td>
-			        <td><?php echo $obj1['landing_at']; ?></td>
-			        <td><?php echo $obj1['depart_date']; ?></td>
-			        <td><?php echo $obj1['routes_from']; ?></td>
-			        <td><?php echo $obj1['routes_to']; ?></td>
-			        <td><?php echo $obj1['id_transport']; ?></td>
-			        <td><?php echo $obj1['price']; ?></td>
-			        <td>
-          			<a href="<?php echo base_url(); ?>reserv/reservation/<?php echo $obj1['id']; ?>" class="btn btn-warning">Book</a>
-          			</td>
-        		</tr>
-      		<?php 
-    			}
-    		?>
-		</table>
-	</div>	
+	<div class="container">  
+	<center><h2>Your Personal Information</h2></center>
+					<br>
+					<form action="<?php echo base_url(); ?>reserv/savecust" method="post">
+					<div class="col-md-6">
+						<div class="styled-input">
+						<div class="row" style="background: ;">
+						<?php for($i=1; $i<=$seat_qty; $i++){ ?>
+						<div class="col-md-2">
+							<input type="checkbox" name="seat_code"></input>
+							A<?php echo $i; ?>
+						</div>
+							<?php } ?>
+						</div>
+						</div>
+						<input type="submit" value="Submit" style="float: left;">
+					</div>
+					<div class="col-md-6">
+						<ul>
+							<li>Flight Name <?php echo $name;?></li>
+							<li>Routes <?php echo $routes_from;?> to <?php echo $routes_to;?></li>
+							<li>Price <?php echo $price;?></li>
+							<li>Time </li>
+							<li>Seat Qty <?php echo $seat_qty; ?></li>
+						</ul>
+						<ul style="margin-top: 55px;">
+							<li>Your Name <?php echo $namecust;?></li>
+							<li>Phone Number <?php echo $phone;?></li>
+							<li>Address <?php echo $address;?></li>
+							<li>Gender <?php echo $gender;?></li>
+							<li>Email  <?php echo $email;?></li>
+						</ul>
+					</div>
+					</div>
+					</form>
+					<div class="clearfix"> </div>	
 </div>
 </div>
 	<div class="col-md-4 subscribe-grid">

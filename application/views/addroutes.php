@@ -301,18 +301,22 @@ desired effect
 <?php 
   $id="";
   $depart_at="";
+  $landing_at="";
+  $depart_date="";
   $routes_from="";
   $routes_to="";
-  $plane_name="";
+  $id_transport="";
   $price="";
     if($op=="editroutes"){
       foreach ($sql->result() as $obj) {
         $op = "editroutes";
         $id = $obj->id;
         $depart_at = $obj->depart_at;
+        $landing_at = $obj->landing_at;
+        $depart_date = $obj->depart_date;
         $routes_from = $obj->routes_from;
         $routes_to = $obj->routes_to;
-        $plane_name = $obj->plane_name;
+        $id_transport = $obj->id_transport;
         $price = $obj->price;
     }
 }
@@ -325,6 +329,18 @@ desired effect
     <label for="inputName3" class="col-sm-2 control-label">Depart At</label>
     <div class="col-sm-10">
       <input type="text" class="form-control" name="depart_at" value="<?php echo $depart_at; ?>" placeholder="Depart At">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputName3" class="col-sm-2 control-label">Landing At</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="landing_at" value="<?php echo $landing_at; ?>" placeholder="Landing At">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputName3" class="col-sm-2 control-label">Depart Date</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="depart_date" value="<?php echo $depart_date; ?>" placeholder="Depart Date">
     </div>
   </div>
  <div class="form-group">
@@ -342,7 +358,7 @@ desired effect
    <div class="form-group">
     <label for="inputName3" class="col-sm-2 control-label">Airplane Type</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" name="plane_name" value="<?php echo $plane_name; ?>" placeholder="Airplane Type">
+      <input type="text" class="form-control" name="id_transport" value="<?php echo $id_transport; ?>" placeholder="Airplane Type">
     </div>
   </div>
   <div class="form-group">
